@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tv_service_test_task/core/presentation/theme/app_colors.dart';
+import 'package:tv_service_test_task/gen/assets.gen.dart';
 
 class FilmCard extends StatelessWidget {
   const FilmCard({
@@ -16,8 +17,10 @@ class FilmCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Stack(
+          clipBehavior: Clip.none,
           alignment: Alignment.topLeft,
           children: [
             Image.asset(
@@ -25,37 +28,50 @@ class FilmCard extends StatelessWidget {
               width: 398,
               height: 597,
             ),
-            SizedBox(
-              width: 90,
-              height: 48,
-              child: DecoratedBox(
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  gradient: LinearGradient(
-                    colors: <Color>[
-                      AppColors.purple,
-                      AppColors.blue,
-                    ],
+            if (rate != 0)
+              Positioned(
+                left: 25,
+                top: image == Assets.pngs.blueBag.path ? 36 : 28,
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    minHeight: 48,
+                    minWidth: 90,
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 22,
-                    vertical: 6,
-                  ),
-                  child: Text(
-                    rate.toString(),
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 28,
+                  child: DecoratedBox(
+                    decoration: const BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                      gradient: LinearGradient(
+                        colors: <Color>[
+                          AppColors.purple,
+                          AppColors.blue,
+                        ],
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        rate.toStringAsFixed(1),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 28,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            )
+              )
           ],
         ),
-        Text(text),
+        const SizedBox(
+          height: 20,
+        ),
+        Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 28,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ],
     );
   }

@@ -35,6 +35,17 @@ class $AssetsPngsGen {
   /// File path: assets/pngs/blue_bag.png
   AssetGenImage get blueBag => const AssetGenImage('assets/pngs/blue_bag.png');
 
+  /// File path: assets/pngs/catch_me_if_you_can.png
+  AssetGenImage get catchMeIfYouCan =>
+      const AssetGenImage('assets/pngs/catch_me_if_you_can.png');
+
+  /// File path: assets/pngs/firework.png
+  AssetGenImage get firework => const AssetGenImage('assets/pngs/firework.png');
+
+  /// File path: assets/pngs/home_game.png
+  AssetGenImage get homeGame =>
+      const AssetGenImage('assets/pngs/home_game.png');
+
   /// File path: assets/pngs/john_wick.png
   AssetGenImage get johnWick =>
       const AssetGenImage('assets/pngs/john_wick.png');
@@ -47,9 +58,49 @@ class $AssetsPngsGen {
   AssetGenImage get johnWickText =>
       const AssetGenImage('assets/pngs/john_wick_text.png');
 
+  /// File path: assets/pngs/my_wonderful_unhappiness.png
+  AssetGenImage get myWonderfulUnhappiness =>
+      const AssetGenImage('assets/pngs/my_wonderful_unhappiness.png');
+
+  /// File path: assets/pngs/number_one.png
+  AssetGenImage get numberOne =>
+      const AssetGenImage('assets/pngs/number_one.png');
+
+  /// File path: assets/pngs/number_three.png
+  AssetGenImage get numberThree =>
+      const AssetGenImage('assets/pngs/number_three.png');
+
+  /// File path: assets/pngs/number_two.png
+  AssetGenImage get numberTwo =>
+      const AssetGenImage('assets/pngs/number_two.png');
+
+  /// File path: assets/pngs/red_message.png
+  AssetGenImage get redMessage =>
+      const AssetGenImage('assets/pngs/red_message.png');
+
+  /// File path: assets/pngs/top_ten.png
+  AssetGenImage get topTen => const AssetGenImage('assets/pngs/top_ten.png');
+
+  /// File path: assets/pngs/witcher.png
+  AssetGenImage get witcher => const AssetGenImage('assets/pngs/witcher.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [blueBag, johnWick, johnWickPhoto, johnWickText];
+  List<AssetGenImage> get values => [
+        blueBag,
+        catchMeIfYouCan,
+        firework,
+        homeGame,
+        johnWick,
+        johnWickPhoto,
+        johnWickText,
+        myWonderfulUnhappiness,
+        numberOne,
+        numberThree,
+        numberTwo,
+        redMessage,
+        topTen,
+        witcher
+      ];
 }
 
 class $AssetsSvgsGen {
