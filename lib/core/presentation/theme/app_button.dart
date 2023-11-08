@@ -27,11 +27,7 @@ class AppButton extends StatelessWidget {
               Radius.circular(16),
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              left: 70,
-              top: 20,
-            ),
+          child: Center(
             child: Text(
               text,
               style: const TextStyle(

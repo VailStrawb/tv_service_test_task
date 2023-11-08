@@ -26,10 +26,11 @@ class FilmCard extends StatelessWidget {
               height: 597,
             ),
             SizedBox(
-              width: 75,
+              width: 90,
               height: 48,
               child: DecoratedBox(
                 decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
                   gradient: LinearGradient(
                     colors: <Color>[
                       AppColors.purple,
@@ -37,11 +38,17 @@ class FilmCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                child: Text(
-                  rate.toString(),
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 28,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 22,
+                    vertical: 6,
+                  ),
+                  child: Text(
+                    rate.toString(),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 28,
+                    ),
                   ),
                 ),
               ),

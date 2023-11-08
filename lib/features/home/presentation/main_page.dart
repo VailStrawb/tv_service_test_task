@@ -19,39 +19,80 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
-      body: ListView(
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
-            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 64, top: 40),
-                child: Assets.svgs.appLogo.svg(
-                  width: 144,
-                  height: 50,
+              Align(
+                alignment: Alignment.topLeft,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 64, top: 40),
+                  child: Assets.svgs.appLogo.svg(
+                    width: 144,
+                    height: 50,
+                  ),
                 ),
               ),
               const SizedBox(height: 93),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(left: 55, top: 17),
-                    child: MenuLine(),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(
-                      left:
-                          MediaQuery.of(context).size.width >= 1500 ? 290 : 220,
-                    ),
-                    child: const JohnWickPreview(),
-                  ),
-                ],
+              const Padding(
+                padding: EdgeInsets.only(left: 55, top: 17),
+                child: MenuLine(),
               ),
-              const SizedBox(height: 95),
             ],
+          ),
+          Flexible(
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 100),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width >= 1500
+                              ? 290
+                              : 90,
+                        ),
+                        child: const JohnWickPreview(),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 95),
+                Padding(
+                  padding: const EdgeInsets.only(left: 171),
+                  child: SizedBox(
+                    height: 700,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        FilmCard(
+                          text: "Kva",
+                          image: Assets.pngs.blueBag.path,
+                          rate: 5.6,
+                        ),
+                        const SizedBox(width: 44),
+                        FilmCard(
+                          text: "Kva",
+                          image: Assets.pngs.blueBag.path,
+                          rate: 5.6,
+                        ),
+                        const SizedBox(width: 44),
+                        FilmCard(
+                          text: "Kva",
+                          image: Assets.pngs.blueBag.path,
+                          rate: 5.6,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

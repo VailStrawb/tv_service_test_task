@@ -63,6 +63,7 @@ class JohnWickPreview extends StatelessWidget {
           },
           blendMode: BlendMode.darken,
           child: Assets.pngs.johnWickPhoto.image(
+            fit: BoxFit.fitHeight,
             width: MediaQuery.of(context).size.width >= 1500 ? 895 : 430,
             height: MediaQuery.of(context).size.height >= 1000 ? 695 : 470,
           ),
