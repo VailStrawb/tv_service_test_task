@@ -29,7 +29,6 @@ class MenuLine extends StatelessWidget {
 
 class _IconBox extends StatelessWidget {
   const _IconBox({
-    super.key,
     required this.imagePath,
   });
 
