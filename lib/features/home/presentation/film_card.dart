@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tv_service_test_task/core/presentation/theme/app_colors.dart';
+import 'package:tv_service_test_task/core/presentation/theme/app_fonts.dart';
 import 'package:tv_service_test_task/gen/assets.gen.dart';
 
 class FilmCard extends StatelessWidget {
@@ -50,10 +51,7 @@ class FilmCard extends StatelessWidget {
                     child: Center(
                       child: Text(
                         rate.toStringAsFixed(1),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 28,
-                        ),
+                        style: AppFonts.filmCardText,
                       ),
                     ),
                   ),
@@ -66,11 +64,7 @@ class FilmCard extends StatelessWidget {
         ),
         Text(
           text,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 28,
-            fontWeight: FontWeight.w500,
-          ),
+          style: AppFonts.filmCardText,
         ),
       ],
     );

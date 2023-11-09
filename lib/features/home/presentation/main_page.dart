@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tv_service_test_task/core/presentation/theme/app_colors.dart';
+import 'package:tv_service_test_task/core/presentation/theme/app_fonts.dart';
 import 'package:tv_service_test_task/features/home/application/bloc/films_bloc.dart';
 import 'package:tv_service_test_task/features/home/infrastructure/repositories/mock_film_repository.dart';
 import 'package:tv_service_test_task/features/home/presentation/film_card.dart';
@@ -20,6 +21,14 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
+    final List<String> numbers = [
+      Assets.pngs.numberOne.path,
+      Assets.pngs.numberTwo.path,
+      Assets.pngs.numberThree.path,
+      Assets.pngs.numberThree.path,
+      Assets.pngs.numberThree.path,
+      Assets.pngs.numberThree.path,
+    ];
     return BlocProvider(
       create: (context) =>
           FilmsBloc(MockFilmRepository())..add(LoadFilmsEvent()),
@@ -34,8 +43,8 @@ class _MainPageState extends State<MainPage> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 64, top: 40),
-                    child: Assets.svgs.appLogo.svg(
+                    padding: const EdgeInsets.only(top: 40),
+                    child: Assets.pngs.appLogo.image(
                       width: 144,
                       height: 50,
                     ),
@@ -112,11 +121,8 @@ class _MainPageState extends State<MainPage> {
                             const SizedBox(width: 20),
                             const Text(
                               "просмотров за неделю",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 40,
-                                  fontWeight: FontWeight.w700),
-                            )
+                              style: AppFonts.normal40w700,
+                            ),
                           ],
                         ),
                         const SizedBox(height: 33),
@@ -126,43 +132,24 @@ class _MainPageState extends State<MainPage> {
                                   ? 215
                                   : 100),
                           child: SizedBox(
-                            height: 700,
+                            height: 900,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                for (final film in value.topFilms)
+                                for (final (i, film) in value.topFilms.indexed)
                                   Padding(
                                     padding: const EdgeInsets.only(right: 120),
                                     child: Stack(
                                       clipBehavior: Clip.none,
                                       children: [
-                                        if (film.filmId == 1)
-                                          Positioned(
-                                            top: 100,
-                                            child: SizedBox(
-                                              width: 241,
-                                              height: 392,
-                                              child:
-                                                  Assets.pngs.numberOne.image(),
-                                            ),
-                                          )
-                                        else if (film.filmId == 2)
-                                          Positioned(
-                                            top: 100,
-                                            child: Assets.pngs.numberTwo.image(
-                                              width: 241,
-                                              height: 392,
-                                            ),
-                                          )
-                                        else
-                                          Positioned(
-                                            top: 100,
-                                            child:
-                                                Assets.pngs.numberThree.image(
-                                              width: 241,
-                                              height: 392,
-                                            ),
+                                        Positioned(
+                                          top: 100,
+                                          child: SizedBox(
+                                            width: 241,
+                                            height: 392,
+                                            child: Image.asset(numbers[i]),
                                           ),
+                                        ),
                                         Padding(
                                           padding:
                                               const EdgeInsets.only(left: 170),

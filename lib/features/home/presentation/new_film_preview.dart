@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tv_service_test_task/core/presentation/theme/app_button.dart';
 import 'package:tv_service_test_task/core/presentation/theme/app_colors.dart';
+import 'package:tv_service_test_task/core/presentation/theme/app_fonts.dart';
 import 'package:tv_service_test_task/features/home/domain/models/film_model.dart';
 
 class NewFilmPreview extends StatelessWidget {
@@ -49,11 +50,7 @@ class NewFilmPreview extends StatelessWidget {
             Text(
               newFilm.filmDescription,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppFonts.normal30w500,
             ),
             const SizedBox(height: 36),
             const Row(
@@ -71,7 +68,7 @@ class NewFilmPreview extends StatelessWidget {
                 SizedBox(width: 24),
                 AppButton(
                   text: "О фильме",
-                  color: Color.fromARGB(80, 159, 159, 159),
+                  color: Color.fromARGB(35, 159, 159, 159),
                   gradient: LinearGradient(
                     colors: <Color>[
                       Color.fromARGB(0, 76, 175, 79),

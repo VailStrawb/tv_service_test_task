@@ -84,7 +84,7 @@ class MockFilmRepository implements FilmRepository {
       FilmModel(
         filmName: "",
         filmImage: Assets.pngs.redMessage.path,
-        filmId: 7,
+        filmId: 3,
         filmRate: 0,
         filmNameImage: "",
         filmDescription: "",
@@ -92,7 +92,7 @@ class MockFilmRepository implements FilmRepository {
       FilmModel(
         filmName: "",
         filmImage: Assets.pngs.myWonderfulUnhappiness.path,
-        filmId: 9,
+        filmId: 3,
         filmRate: 0,
         filmNameImage: "",
         filmDescription: "",

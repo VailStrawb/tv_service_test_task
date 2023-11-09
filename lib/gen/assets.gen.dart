@@ -32,6 +32,9 @@ class $AssetsFontsGen {
 class $AssetsPngsGen {
   const $AssetsPngsGen();
 
+  /// File path: assets/pngs/app_logo.png
+  AssetGenImage get appLogo => const AssetGenImage('assets/pngs/app_logo.png');
+
   /// File path: assets/pngs/blue_bag.png
   AssetGenImage get blueBag => const AssetGenImage('assets/pngs/blue_bag.png');
 
@@ -86,6 +89,7 @@ class $AssetsPngsGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        appLogo,
         blueBag,
         catchMeIfYouCan,
         firework,
