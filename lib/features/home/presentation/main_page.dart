@@ -27,7 +27,6 @@ class _MainPageState extends State<MainPage> {
       Assets.pngs.numberThree.path,
       Assets.pngs.numberThree.path,
       Assets.pngs.numberThree.path,
-      Assets.pngs.numberThree.path,
     ];
     return BlocProvider(
       create: (context) =>

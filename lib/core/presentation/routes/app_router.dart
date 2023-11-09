@@ -7,6 +7,9 @@ class AppRouter extends $AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: MainRoute.page,
+        ),
+        AutoRoute(
+          page: SplashRoute.page,
           initial: true,
         ),
       ];
